@@ -46,16 +46,24 @@ class App extends React.Component {
 		return this.shuffleArray(quiz).slice(0, questionsCount);
 	};
 
-	customizeQuiz = (questionsCount) => {
-		const quizSet = this.createQuizSet(quiz, questionsCount);
+	prepareFirstQuestion = (quizSet) => {
 		const firstQuestion = quizSet[0];
 
 		this.setState({
 			quizSet,
-			questionsCount,
+			questionsCount : quizSet.length,
 			question       : firstQuestion.question,
-			answer         : firstQuestion.answer
+			answer         : firstQuestion.answer,
+			questionIndex  : 0,
+			correctAnswers : [],
+			quizFinished   : false
 		});
+	};
+
+	customizeQuiz = (questionsCount) => {
+		const quizSet = this.createQuizSet(quiz, questionsCount);
+
+		this.prepareFirstQuestion(quizSet);
 	};
 
 	nextQuestion = (quizSet) => {
@@ -89,14 +97,14 @@ class App extends React.Component {
 
 	again = () => {
 		this.setState({
-			questionsCount : null,
-			questionIndex  : 0,
-			quizSet        : null,
-			question       : null,
-			answer         : null,
-			correctAnswers : 0,
-			quizFinished   : false
+			questionsCount : null
 		});
+	};
+
+	redo = () => {
+		const quizSet = this.shuffleArray(this.state.quizSet);
+
+		this.prepareFirstQuestion(quizSet);
 	};
 
 	render() {
@@ -109,6 +117,9 @@ class App extends React.Component {
 						quizSet={this.state.quizSet}
 					/>
 					<div className="again">
+						<button className="again-btn" onClick={this.redo}>
+							Try again with the same questions
+						</button>
 						<button className="again-btn" onClick={this.again}>
 							Another!
 						</button>
@@ -129,7 +140,7 @@ class App extends React.Component {
 		return (
 			<div className="app-container">
 				<h1>{this.state.question}</h1>
-				<Lock checkAnswer={this.checkAnswer} question={this.state.question} />
+				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
 			</div>
 		);
 	}
