@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 export class CustomizeQuiz extends Component {
 	static propTypes = {};
@@ -7,14 +7,14 @@ export class CustomizeQuiz extends Component {
 	render() {
 		return (
 			<div className="customize">
-				<button className="customize-button" onClick={() => this.props.onClick(1)}>
-					1
+				<button className="customize-button" onClick={() => this.props.onClick(5)}>
+					5
 				</button>
-				<button className="customize-button" onClick={() => this.props.onClick(2)}>
-					2
+				<button className="customize-button" onClick={() => this.props.onClick(10)}>
+					10
 				</button>
-				<button className="customize-button" onClick={() => this.props.onClick(3)}>
-					3
+				<button className="customize-button" onClick={() => this.props.onClick(15)}>
+					15
 				</button>
 			</div>
 		);
