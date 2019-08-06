@@ -10,6 +10,8 @@
 	align-items: center;
 	padding: 30px;
 	margin: 15px;
+	width: 500px;
+	height: 100px;
 	background: rgb(115, 116, 120);
 	background: linear-gradient(180deg, rgba(115, 116, 120, 1) 0%, rgba(33, 37, 40, 1) 100%);
 	border: 3px solid #eef2f3;

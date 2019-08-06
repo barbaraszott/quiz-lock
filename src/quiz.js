@@ -16,7 +16,7 @@ const quiz = [
 		answer   : '1969'
 	},
 	{
-		question : 'First four digits after the decimal of PI',
+		question : 'First four digits after the decimal of PI are..?',
 		answer   : '1415'
 	},
 	{
@@ -32,7 +32,7 @@ const quiz = [
 		answer   : '0002'
 	},
 	{
-		question : "First four digits after the decimal of Euler's number",
+		question : `First four digits after the decimal of Euler's number`,
 		answer   : '7182'
 	},
 	{

@@ -16,7 +16,13 @@ class QuizSummary extends Component {
 						{quizSet.map((quiz, i) => (
 							<li
 								key={i}
-								className={correctAnswers.includes(i) ? 'summary-answers_correct' : 'summary-answers_incorrect'}
+								className={
+									correctAnswers.length && correctAnswers.includes(i) ? (
+										'summary-answers_correct'
+									) : (
+										'summary-answers_incorrect'
+									)
+								}
 							>
 								{quiz.question}
 							</li>
