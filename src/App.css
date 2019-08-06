@@ -70,3 +70,29 @@
 	user-select: none;
 	text-shadow: 2px 2px 2px #ffffff;
 }
+
+.customize {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.customize-button {
+	width: 60px;
+	height: 60px;
+	padding: 10px;
+	margin: 30px;
+	font-size: 25px;
+}
+
+.summary-answers {
+	text-align: left;
+}
+
+.summary-answers_correct {
+	color: green;
+}
+
+.summary-answers_incorrect {
+	color: red;
+}

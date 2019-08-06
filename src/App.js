@@ -4,6 +4,7 @@ import Lock from './Lock';
 // import Value from './Value';
 import quiz from './quiz';
 import CustomizeQuiz from './CustomizeQuiz';
+import QuizSummary from './QuizSummary';
 
 class App extends React.Component {
 	constructor(props) {
@@ -13,7 +14,9 @@ class App extends React.Component {
 			questionIndex  : 0,
 			quizSet        : null,
 			question       : null,
-			answer         : null
+			answer         : null,
+			correctAnswers : [],
+			quizFinished   : false
 		};
 	}
 
@@ -57,25 +60,62 @@ class App extends React.Component {
 
 	nextQuestion = (quizSet) => {
 		const currentQuestionIndex = this.state.questionIndex;
-		const questionIndex = currentQuestionIndex === quizSet.length - 1 ? 0 : currentQuestionIndex + 1;
-		// LATER: after finishing quiz set msg to user with score and Q about next round -> create new quizSet etc
+		const questionIndex = currentQuestionIndex + 1;
 
-		this.setState({
-			questionIndex,
-			question      : quizSet[questionIndex].question,
-			answer        : quizSet[questionIndex].answer
-		});
+		if (questionIndex < quizSet.length) {
+			this.setState({
+				questionIndex,
+				question      : quizSet[questionIndex].question,
+				answer        : quizSet[questionIndex].answer
+			});
+		} else {
+			this.setState({
+				quizFinished : true
+			});
+		}
 	};
 
 	checkAnswer = (userAnswer) => {
-		const message = userAnswer === this.state.answer ? 'Yay! Well done!' : 'Nope, sadly that is wrong answer.';
-		window.alert(message);
-
+		if (userAnswer === this.state.answer) {
+			this.setState({
+				correctAnswers : [
+					...this.state.correctAnswers,
+					this.state.questionIndex
+				]
+			});
+		}
 		this.nextQuestion(this.state.quizSet);
 	};
 
+	again = () => {
+		this.setState({
+			questionsCount : null,
+			questionIndex  : 0,
+			quizSet        : null,
+			question       : null,
+			answer         : null,
+			correctAnswers : 0,
+			quizFinished   : false
+		});
+	};
+
 	render() {
-		console.log(this.state);
+		if (this.state.quizFinished) {
+			return (
+				<div className="app-container">
+					<QuizSummary
+						correctAnswers={this.state.correctAnswers}
+						questionsCount={this.state.questionsCount}
+						quizSet={this.state.quizSet}
+					/>
+					<div className="again">
+						<button className="again-btn" onClick={this.again}>
+							Another!
+						</button>
+					</div>
+				</div>
+			);
+		}
 
 		if (!this.state.questionsCount) {
 			return (
