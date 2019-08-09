@@ -97,7 +97,8 @@ class App extends React.Component {
 
 	again = () => {
 		this.setState({
-			questionsCount : null
+			questionsCount : null,
+			quizFinished   : false
 		});
 	};
 
