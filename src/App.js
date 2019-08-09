@@ -108,42 +108,54 @@ class App extends React.Component {
 		this.prepareFirstQuestion(quizSet);
 	};
 
-	render() {
-		if (this.state.quizFinished) {
-			return (
-				<div className="app-container">
-					<QuizSummary
-						correctAnswers={this.state.correctAnswers}
-						questionsCount={this.state.questionsCount}
-						quizSet={this.state.quizSet}
-					/>
-					<div className="again">
-						<button className="again-btn" onClick={this.redo}>
-							Try again with the same questions
-						</button>
-						<button className="again-btn" onClick={this.again}>
-							Another!
-						</button>
-					</div>
+	renderQuizSummary = () => {
+		return (
+			<div className="app-container">
+				<QuizSummary
+					correctAnswers={this.state.correctAnswers}
+					questionsCount={this.state.questionsCount}
+					quizSet={this.state.quizSet}
+				/>
+				<div className="again">
+					<button className="again-btn" onClick={this.redo}>
+						Try again with the same questions
+					</button>
+					<button className="again-btn" onClick={this.again}>
+						Another!
+					</button>
 				</div>
-			);
-		}
+			</div>
+		);
+	};
 
-		if (!this.state.questionsCount) {
-			return (
-				<div className="app-container">
-					<h1>Hello! How many questions do You want to have in this quiz?</h1>
-					<CustomizeQuiz onClick={this.customizeQuiz} />
-				</div>
-			);
-		}
+	renderCustomizeQuiz = () => {
+		return (
+			<div className="app-container">
+				<h1>Hello! How many questions do You want to have in this quiz?</h1>
+				<CustomizeQuiz onClick={this.customizeQuiz} />
+			</div>
+		);
+	};
 
+	renderLock = () => {
 		return (
 			<div className="app-container">
 				<h1>{this.state.question}</h1>
 				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
 			</div>
 		);
+	};
+
+	render() {
+		if (this.state.quizFinished) {
+			return this.renderQuizSummary();
+		}
+
+		if (!this.state.questionsCount) {
+			return this.renderCustomizeQuiz();
+		}
+
+		return this.renderLock();
 	}
 }
 
