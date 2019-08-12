@@ -174,4 +174,5 @@
 .again-btn {
 	flex-basis: 40%;
 	transition: 0.15s;
+	min-height: 48px;
 }
