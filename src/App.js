@@ -117,10 +117,10 @@ class App extends React.Component {
 					quizSet={this.state.quizSet}
 				/>
 				<div className="again">
-					<button className="again-btn" onClick={this.redo}>
+					<button className="again-btn dark-silver-btn" onClick={this.redo}>
 						Try again with the same questions
 					</button>
-					<button className="again-btn" onClick={this.again}>
+					<button className="again-btn dark-silver-btn" onClick={this.again}>
 						Another!
 					</button>
 				</div>
@@ -131,7 +131,7 @@ class App extends React.Component {
 	renderCustomizeQuiz = () => {
 		return (
 			<div className="app-container">
-				<h1>Hello! How many questions do You want to have in this quiz?</h1>
+				<h1 className="text-with-border">Hello! How many questions do You want to have in this quiz?</h1>
 				<CustomizeQuiz onClick={this.customizeQuiz} />
 			</div>
 		);
@@ -140,7 +140,7 @@ class App extends React.Component {
 	renderLock = () => {
 		return (
 			<div className="app-container">
-				<h1>{this.state.question}</h1>
+				<h1 className="text-with-border">{this.state.question}</h1>
 				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
 			</div>
 		);

@@ -45,7 +45,14 @@ class Lock extends Component {
 					))}
 				</div>
 				<div className="lock-buttons">
-					<button onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))}>Check!</button>
+					{/* <div className="next-btn" onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))} /> */}
+
+					<button
+						className="dark-silver-btn next-btn"
+						onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))}
+					>
+						Next
+					</button>
 				</div>
 			</div>
 		);

@@ -7,13 +7,13 @@ export class CustomizeQuiz extends Component {
 	render() {
 		return (
 			<div className="customize">
-				<button className="customize-button" onClick={() => this.props.onClick(5)}>
+				<button className="customize-button dark-silver-btn" onClick={() => this.props.onClick(5)}>
 					5
 				</button>
-				<button className="customize-button" onClick={() => this.props.onClick(10)}>
+				<button className="customize-button dark-silver-btn" onClick={() => this.props.onClick(10)}>
 					10
 				</button>
-				<button className="customize-button" onClick={() => this.props.onClick(15)}>
+				<button className="customize-button dark-silver-btn" onClick={() => this.props.onClick(15)}>
 					15
 				</button>
 			</div>
