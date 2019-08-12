@@ -137,10 +137,14 @@ class App extends React.Component {
 		);
 	};
 
+	calculateQuestionStyle = () => (this.state.question.length > 100 ? { fontSize: '1.6em' } : null);
+
 	renderLock = () => {
 		return (
 			<div className="app-container">
-				<h1 className="text-with-border">{this.state.question}</h1>
+				<h1 className="text-with-border question" style={this.calculateQuestionStyle()}>
+					{this.state.question}
+				</h1>
 				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
 			</div>
 		);

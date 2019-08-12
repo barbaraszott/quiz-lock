@@ -3,9 +3,9 @@
 }
 
 .app-container {
-	max-width: 600px;
+	max-width: 60vw;
 	text-align: center;
-	padding: 30px;
+	position: relative;
 }
 
 .lock-combination {
@@ -13,7 +13,7 @@
 	justify-content: space-around;
 	align-items: center;
 	padding: 80px 30px;
-	margin: 15px;
+	margin: 15px 0;
 	width: 500px;
 	height: 100px;
 	background: rgb(115, 116, 120);
@@ -90,10 +90,17 @@
 	padding: 5px;
 }
 
+.question {
+	position: absolute;
+	bottom: calc(100% + 30px);
+	width: 100%;
+}
+
 .next-btn {
 	width: 65px;
 	height: 48px;
 	border-radius: 5px;
+	margin-top: 30px;
 }
 
 .next-btn:hover {

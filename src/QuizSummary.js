@@ -7,9 +7,7 @@ class QuizSummary extends Component {
 		return (
 			<div>
 				<h1 className="text-with-border">Congrats!</h1>
-				<p className="score">
-					Score: {correctAnswers.length} / {questionsCount}
-				</p>
+
 				<div>
 					<h2 className="text-with-border">Questions in this quiz were:</h2>
 					<ul className="fa-ul summary-answers">
@@ -30,6 +28,9 @@ class QuizSummary extends Component {
 							</li>
 						))}
 					</ul>
+					<p className="score text-with-border">
+						Score: {correctAnswers.length} / {questionsCount}
+					</p>
 				</div>
 			</div>
 		);
