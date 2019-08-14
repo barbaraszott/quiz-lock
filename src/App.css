@@ -177,6 +177,9 @@
 	transition: 0.15s;
 	min-height: 48px;
 }
+
+.question-long {
+	font-size: 1.6em;
 }
 
 @media (max-width: 550px) {
