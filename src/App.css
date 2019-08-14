@@ -3,7 +3,6 @@
 }
 
 .app-container {
-	max-width: 60vw;
 	text-align: center;
 	position: relative;
 }
@@ -148,10 +147,11 @@
 	padding: 25px 50px;
 	line-height: 2;
 	list-style-position: inside;
+	max-width: 85vw;
 }
 
 .fa-ul {
-	margin-left: 0;
+	margin: 0 auto;
 }
 
 .check-icon {
@@ -169,10 +169,75 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: stretch;
+	margin: 15px;
 }
 
 .again-btn {
 	flex-basis: 40%;
 	transition: 0.15s;
 	min-height: 48px;
+}
+}
+
+@media (max-width: 550px) {
+	.lock-combination {
+		width: 400px;
+		height: ;
+		padding: 50px 20px;
+		margin: ;
+		font-size: ;
+	}
+
+	.lock-combination_value {
+		width: 65px;
+		height: 65px;
+	}
+
+	.summary-answers {
+	}
+}
+
+@media (max-width: 450px) {
+	.customize-header {
+		width: 290px;
+		margin: 0 auto;
+		font-size: 1.3em;
+	}
+
+	.customize {
+		margin: 30px;
+	}
+
+	.customize-button {
+		margin: 10px;
+	}
+
+	.question {
+		font-size: 1.5em;
+	}
+
+	.lock-combination {
+		margin: 0;
+		padding: 15px;
+		width: 300px;
+	}
+
+	.lock-combination_value {
+		width: 50px;
+		height: 50px;
+	}
+
+	.question-long {
+		font-size: 1em;
+	}
+}
+
+@media (orientation: landscape) {
+	.question {
+		position: static;
+	}
+
+	.lock-combination {
+		margin: 0 auto;
+	}
 }

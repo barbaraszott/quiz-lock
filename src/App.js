@@ -131,20 +131,20 @@ class App extends React.Component {
 	renderCustomizeQuiz = () => {
 		return (
 			<div className="app-container">
-				<h1 className="text-with-border">Hello! How many questions do You want to have in this quiz?</h1>
+				<h1 className="text-with-border customize-header">
+					Hello! How many questions do You want to have in this quiz?
+				</h1>
 				<CustomizeQuiz onClick={this.customizeQuiz} />
 			</div>
 		);
 	};
 
-	calculateQuestionStyle = () => (this.state.question.length > 100 ? { fontSize: '1.6em' } : null);
+	isLongQuestion = () => (this.state.question.length > 100 ? `question-long` : ``);
 
 	renderLock = () => {
 		return (
 			<div className="app-container">
-				<h1 className="text-with-border question" style={this.calculateQuestionStyle()}>
-					{this.state.question}
-				</h1>
+				<h1 className={`text-with-border question ` + this.isLongQuestion()}>{this.state.question}</h1>
 				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
 			</div>
 		);
