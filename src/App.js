@@ -121,14 +121,7 @@ class App extends React.Component {
 	};
 
 	renderCustomizeQuiz = () => {
-		return (
-			<React.Fragment>
-				<h1 className="text-with-border customize-header">
-					Hello! How many questions do You want to have in this quiz?
-				</h1>
-				<CustomizeQuiz onClick={this.customizeQuiz} />
-			</React.Fragment>
-		);
+		return <CustomizeQuiz onClick={this.customizeQuiz} />;
 	};
 
 	isLongQuestion = () => (this.state.question.length > 100 ? `question-long` : ``);
