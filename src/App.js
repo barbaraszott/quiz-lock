@@ -110,7 +110,7 @@ class App extends React.Component {
 
 	renderQuizSummary = () => {
 		return (
-			<div className="app-container">
+			<React.Fragment>
 				<QuizSummary
 					correctAnswers={this.state.correctAnswers}
 					questionsCount={this.state.questionsCount}
@@ -124,18 +124,18 @@ class App extends React.Component {
 						Another!
 					</button>
 				</div>
-			</div>
+			</React.Fragment>
 		);
 	};
 
 	renderCustomizeQuiz = () => {
 		return (
-			<div className="app-container">
+			<React.Fragment>
 				<h1 className="text-with-border customize-header">
 					Hello! How many questions do You want to have in this quiz?
 				</h1>
 				<CustomizeQuiz onClick={this.customizeQuiz} />
-			</div>
+			</React.Fragment>
 		);
 	};
 
@@ -143,23 +143,19 @@ class App extends React.Component {
 
 	renderLock = () => {
 		return (
-			<div className="app-container">
+			<React.Fragment>
 				<h1 className={`text-with-border question ` + this.isLongQuestion()}>{this.state.question}</h1>
 				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
-			</div>
+			</React.Fragment>
 		);
 	};
 
 	render() {
-		if (this.state.quizFinished) {
-			return this.renderQuizSummary();
-		}
+		const game = this.state.quizFinished
+			? this.renderQuizSummary()
+			: !this.state.questionsCount ? this.renderCustomizeQuiz() : this.renderLock();
 
-		if (!this.state.questionsCount) {
-			return this.renderCustomizeQuiz();
-		}
-
-		return this.renderLock();
+		return <div className="app-container">{game}</div>;
 	}
 }
 
