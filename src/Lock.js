@@ -37,31 +37,36 @@ class Lock extends Component {
 	};
 
 	render() {
-		return (
-			<div className="lock">
-				<div className="lock-combination">
-					{this.state.currentInput.map((value, i) => (
-						<Value currentValue={value} key={i} index={i} onClick={this.changeValue} />
-					))}
-				</div>
-				<div className="lock-buttons">
-					{/* <div className="next-btn" onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))} /> */}
+		const { isLongQuestion, question, checkAnswer } = this.props;
+		const userAnswer = this.state.currentInput.join('');
 
-					<button
-						className="dark-silver-btn next-btn"
-						onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))}
-					>
-						Next
-					</button>
+		return (
+			<React.Fragment>
+				<h1 className={`text-with-border question ` + isLongQuestion()}>{question}</h1>
+				<div className="lock">
+					<div className="lock-combination">
+						{this.state.currentInput.map((value, i) => (
+							<Value currentValue={value} key={i} index={i} onClick={this.changeValue} />
+						))}
+					</div>
+					<div className="lock-buttons">
+						{/* <div className="next-btn" onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))} /> */}
+
+						<button className="dark-silver-btn next-btn" onClick={() => checkAnswer(userAnswer)}>
+							Next
+						</button>
+					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		);
 	}
 }
 
 Lock.propTypes = {
-	checkAnswer : PropTypes.func,
-	question    : PropTypes.string
+	checkAnswer    : PropTypes.func,
+	question       : PropTypes.string,
+	isLongQuestion : PropTypes.func,
+	onClick        : PropTypes.func
 };
 
 export default Lock;

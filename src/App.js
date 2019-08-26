@@ -124,16 +124,16 @@ class App extends React.Component {
 		return <CustomizeQuiz onClick={this.customizeQuiz} />;
 	};
 
-	isLongQuestion = () => (this.state.question.length > 100 ? `question-long` : ``);
+	isLongQuestion = () => (this.state.question.length > 100 ? 'question-long' : '');
 
-	renderLock = () => {
-		return (
-			<React.Fragment>
-				<h1 className={`text-with-border question ` + this.isLongQuestion()}>{this.state.question}</h1>
-				<Lock checkAnswer={this.checkAnswer} question={this.state.question} onClick={this.again} />
-			</React.Fragment>
-		);
-	};
+	renderLock = () => (
+		<Lock
+			checkAnswer={this.checkAnswer}
+			question={this.state.question}
+			isLongQuestion={this.isLongQuestion}
+			onClick={this.again}
+		/>
+	);
 
 	render() {
 		const game = this.state.quizFinished
