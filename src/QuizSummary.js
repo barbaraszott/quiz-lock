@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 
 class QuizSummary extends Component {
 	render() {
-		const { correctAnswers, questionsCount, quizSet } = this.props;
+		const { correctAnswers, questionsCount, quizSet, redo, again } = this.props;
 		return (
-			<div>
+			<React.Fragment>
 				<h1 className="text-with-border">Congrats!</h1>
 
 				<div>
@@ -32,7 +32,15 @@ class QuizSummary extends Component {
 						Score: {correctAnswers.length} / {questionsCount}
 					</p>
 				</div>
-			</div>
+				<div className="again">
+					<button className="again-btn dark-silver-btn" onClick={redo}>
+						Try again with the same questions
+					</button>
+					<button className="again-btn dark-silver-btn" onClick={again}>
+						Another!
+					</button>
+				</div>
+			</React.Fragment>
 		);
 	}
 }

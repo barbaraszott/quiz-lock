@@ -110,21 +110,13 @@ class App extends React.Component {
 
 	renderQuizSummary = () => {
 		return (
-			<React.Fragment>
-				<QuizSummary
-					correctAnswers={this.state.correctAnswers}
-					questionsCount={this.state.questionsCount}
-					quizSet={this.state.quizSet}
-				/>
-				<div className="again">
-					<button className="again-btn dark-silver-btn" onClick={this.redo}>
-						Try again with the same questions
-					</button>
-					<button className="again-btn dark-silver-btn" onClick={this.again}>
-						Another!
-					</button>
-				</div>
-			</React.Fragment>
+			<QuizSummary
+				correctAnswers={this.state.correctAnswers}
+				questionsCount={this.state.questionsCount}
+				quizSet={this.state.quizSet}
+				redo={this.redo}
+				again={this.again}
+			/>
 		);
 	};
 
