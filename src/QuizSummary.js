@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class QuizSummary extends Component {
 	render() {
@@ -44,5 +44,13 @@ class QuizSummary extends Component {
 		);
 	}
 }
+
+QuizSummary.propTypes = {
+	correctAnswers : PropTypes.array,
+	questionsCount : PropTypes.number,
+	quizSet        : PropTypes.array,
+	redo           : PropTypes.func,
+	again          : PropTypes.func
+};
 
 export default QuizSummary;
