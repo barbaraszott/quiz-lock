@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Lock from './Lock';
-// import Value from './Value';
 import quiz from './quiz';
 import CustomizeQuiz from './CustomizeQuiz';
 import QuizSummary from './QuizSummary';
@@ -24,7 +23,6 @@ class App extends React.Component {
 		// Fisher–Yates shuffle
 
 		const shuffledArray = Array.from(array);
-		// QUESTIONS: Do we have to create new array here, or not neccessary?
 
 		for (let currentIndex = shuffledArray.length - 1; currentIndex > 0; currentIndex--) {
 			let randomIndex = Math.floor(Math.random() * (currentIndex + 1)); // random index from 0 to i
@@ -40,11 +38,7 @@ class App extends React.Component {
 		return shuffledArray;
 	}
 
-	createQuizSet = (quiz, questionsCount) => {
-		// QUESTION: can this be done in quiz.js?
-
-		return this.shuffleArray(quiz).slice(0, questionsCount);
-	};
+	createQuizSet = (quiz, questionsCount) => this.shuffleArray(quiz).slice(0, questionsCount);
 
 	prepareFirstQuestion = (quizSet) => {
 		const firstQuestion = quizSet[0];
@@ -108,8 +102,10 @@ class App extends React.Component {
 		this.prepareFirstQuestion(quizSet);
 	};
 
-	renderQuizSummary = () => {
-		return (
+	isLongQuestion = () => (this.state.question.length > 100 ? 'question-long' : '');
+
+	render() {
+		const game = this.state.quizFinished ? (
 			<QuizSummary
 				correctAnswers={this.state.correctAnswers}
 				questionsCount={this.state.questionsCount}
@@ -117,28 +113,16 @@ class App extends React.Component {
 				redo={this.redo}
 				again={this.again}
 			/>
+		) : !this.state.questionsCount ? (
+			<CustomizeQuiz onClick={this.customizeQuiz} />
+		) : (
+			<Lock
+				checkAnswer={this.checkAnswer}
+				question={this.state.question}
+				isLongQuestion={this.isLongQuestion}
+				onClick={this.again}
+			/>
 		);
-	};
-
-	renderCustomizeQuiz = () => {
-		return <CustomizeQuiz onClick={this.customizeQuiz} />;
-	};
-
-	isLongQuestion = () => (this.state.question.length > 100 ? 'question-long' : '');
-
-	renderLock = () => (
-		<Lock
-			checkAnswer={this.checkAnswer}
-			question={this.state.question}
-			isLongQuestion={this.isLongQuestion}
-			onClick={this.again}
-		/>
-	);
-
-	render() {
-		const game = this.state.quizFinished
-			? this.renderQuizSummary()
-			: !this.state.questionsCount ? this.renderCustomizeQuiz() : this.renderLock();
 
 		return <div className="app-container">{game}</div>;
 	}
