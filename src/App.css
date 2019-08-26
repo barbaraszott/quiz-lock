@@ -235,7 +235,7 @@
 	}
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape && max-width: 600px) {
 	.question {
 		position: static;
 	}
