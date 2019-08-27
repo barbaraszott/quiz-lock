@@ -1,0 +1,37 @@
+@import './utilities.scss';
+
+.fa-ul {
+	margin: 0 auto;
+}
+
+.summary-answers {
+	list-style-position: inside;
+	max-width: 85vw;
+	background: white;
+	border-radius: 15px;
+	padding: 25px 50px;
+	line-height: 2;
+	text-align: left;
+}
+
+.correct {
+	color: green;
+}
+
+.incorrect {
+	color: red;
+}
+
+.again {
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+	margin: 15px;
+}
+
+.again-btn {
+	@extend .dark-silver-btn;
+	flex-basis: 40%;
+	transition: 0.15s;
+	min-height: 48px;
+}

@@ -6,10 +6,10 @@ class QuizSummary extends Component {
 		const { correctAnswers, questionsCount, quizSet, redo, again } = this.props;
 		return (
 			<React.Fragment>
-				<h1 className="text-with-border">Congrats!</h1>
+				<h1>Congrats!</h1>
 
 				<div>
-					<h2 className="text-with-border">Questions in this quiz were:</h2>
+					<h2>Questions in this quiz were:</h2>
 					<ul className="fa-ul summary-answers">
 						{quizSet.map((quiz, i) => (
 							<li key={i}>
@@ -17,9 +17,9 @@ class QuizSummary extends Component {
 									<i
 										className={
 											correctAnswers.length && correctAnswers.includes(i) ? (
-												'fas fa-check-circle check-icon correct'
+												'fas fa-check-circle correct'
 											) : (
-												'fas fa-times-circle check-icon incorrect'
+												'fas fa-times-circle incorrect'
 											)
 										}
 									/>
@@ -28,15 +28,15 @@ class QuizSummary extends Component {
 							</li>
 						))}
 					</ul>
-					<p className="score text-with-border">
+					<p className="text-with-border">
 						Score: {correctAnswers.length} / {questionsCount}
 					</p>
 				</div>
 				<div className="again">
-					<button className="again-btn dark-silver-btn" onClick={redo}>
+					<button className="again-btn" onClick={redo}>
 						Try again with the same questions
 					</button>
-					<button className="again-btn dark-silver-btn" onClick={again}>
+					<button className="again-btn" onClick={again}>
 						Another!
 					</button>
 				</div>

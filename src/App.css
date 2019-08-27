@@ -1,5 +1,9 @@
-* {
+/* * {
 	box-sizing: border-box;
+}
+
+html {
+	background: url(../src/wood-background.png) repeat;
 }
 
 .app-container {
@@ -47,9 +51,9 @@
 	border-style: solid;
 	border-width: 5px 7px 5px 0;
 	border-color: transparent #eef2f3 transparent transparent;
-}
+} */
 
-.lock-combination_value {
+/* .lock-combination_value {
 	color: #3b3f40;
 	width: 80px;
 	height: 80px;
@@ -74,8 +78,8 @@
 	font-family: 'Roboto Slab', serif;
 	user-select: none;
 	text-shadow: 2px 2px 2px #ffffff;
-}
-
+} */
+/* 
 .dark-silver-btn {
 	cursor: pointer;
 	background: rgb(115, 116, 120);
@@ -87,15 +91,15 @@
 	transition: 0.1s;
 	outline: transparent;
 	padding: 5px;
-}
+} */
 
-.question {
+/* .question {
 	position: absolute;
 	bottom: calc(100% + 30px);
 	width: 100%;
-}
+} */
 
-.next-btn {
+/* .next-btn {
 	width: 65px;
 	height: 48px;
 	border-radius: 5px;
@@ -104,43 +108,35 @@
 
 .next-btn:hover {
 	font-size: 15px;
-}
+} */
 
-.dark-silver-btn:active {
+/* .dark-silver-btn:active {
 	transform: translateY(4px);
 	box-shadow: 1px 0px 0px 0px rgba(2, 2, 2, 0.71);
-}
+} */
 
-.customize {
+/* .customize {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
-.customize-button {
-	width: 60px;
-	height: 60px;
-	padding: 10px;
-	margin: 30px;
-	font-size: 25px;
-}
-
-.customize-button:hover {
+/* .customize-button:hover {
 	font-size: 30px;
-}
+} */
 
-.text-with-border {
+/* .text-with-border {
 	color: #f0f0f0;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-}
+} */
 
-.lock-buttons {
+/* .lock-buttons {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
-.summary-answers {
+/* .summary-answers {
 	text-align: left;
 	background: white;
 	border-radius: 15px;
@@ -148,41 +144,38 @@
 	line-height: 2;
 	list-style-position: inside;
 	max-width: 85vw;
-}
+} */
 
-.fa-ul {
+/* .fa-ul {
 	margin: 0 auto;
-}
+} */
 
-.check-icon {
-}
-
-.correct {
+/* .correct {
 	color: green;
 }
 
 .incorrect {
 	color: red;
-}
+} */
 
-.again {
+/* .again {
 	display: flex;
 	justify-content: space-around;
 	align-items: stretch;
 	margin: 15px;
-}
+} */
 
-.again-btn {
+/* .again-btn {
 	flex-basis: 40%;
 	transition: 0.15s;
 	min-height: 48px;
-}
+} */
 
-.question-long {
+/* .question-long {
 	font-size: 1.6em;
-}
+} */
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
 	.lock-combination {
 		width: 400px;
 		height: ;
@@ -243,4 +236,4 @@
 	.lock-combination {
 		margin: 0 auto;
 	}
-}
+} */

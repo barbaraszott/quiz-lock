@@ -1,0 +1,67 @@
+@import './utilities.scss';
+
+.lock-combination {
+	position: relative;
+	width: 500px;
+	height: 100px;
+	padding: 80px 30px;
+	margin: 15px 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: rgb(115, 116, 120);
+	background: linear-gradient(180deg, rgba(115, 116, 120, 1) 0%, rgba(33, 37, 40, 1) 100%);
+	border: 3px solid #eef2f3;
+	border-radius: 15px;
+	box-shadow: inset 0 0 15px 5px #171515, 0 0 15px 5px #171515;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 0;
+		height: 0;
+		border-style: solid;
+	}
+
+	&::before {
+		left: 0;
+		border-width: 5px 0 5px 7px;
+		border-color: transparent transparent transparent #eef2f3;
+	}
+
+	&::after {
+		right: 0;
+		border-width: 5px 7px 5px 0;
+		border-color: transparent #eef2f3 transparent transparent;
+	}
+}
+
+.question {
+	@extend .text-with-border;
+	position: absolute;
+	bottom: calc(100% + 30px);
+	width: 100%;
+
+	&-long {
+		font-size: 1.6em;
+	}
+}
+
+.lock-buttons {
+	@include flex-center;
+}
+
+.next-btn {
+	@extend .dark-silver-btn;
+	width: 65px;
+	height: 48px;
+	border-radius: 5px;
+	margin-top: 30px;
+}
+
+.next-btn:hover {
+	font-size: 15px;
+}

@@ -1,0 +1,19 @@
+@import './utilities.scss';
+
+.customize {
+	@include flex-center;
+}
+
+.customize-button {
+	@extend .dark-silver-btn;
+
+	width: 60px;
+	height: 60px;
+	padding: 10px;
+	margin: 30px;
+	font-size: 25px;
+
+	&:hover {
+		font-size: 30px;
+	}
+}

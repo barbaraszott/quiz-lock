@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
+import './App.scss';
 import Lock from './Lock';
 import quiz from './quiz';
 import CustomizeQuiz from './CustomizeQuiz';
@@ -104,18 +105,24 @@ class App extends React.Component {
 
 	isLongQuestion = () => (this.state.question.length > 100 ? 'question-long' : '');
 
-	render() {
-		const game = this.state.quizFinished ? (
-			<QuizSummary
-				correctAnswers={this.state.correctAnswers}
-				questionsCount={this.state.questionsCount}
-				quizSet={this.state.quizSet}
-				redo={this.redo}
-				again={this.again}
-			/>
-		) : !this.state.questionsCount ? (
-			<CustomizeQuiz onClick={this.customizeQuiz} />
-		) : (
+	renderQuizContent = () => {
+		if (this.state.quizFinished) {
+			return (
+				<QuizSummary
+					correctAnswers={this.state.correctAnswers}
+					questionsCount={this.state.questionsCount}
+					quizSet={this.state.quizSet}
+					redo={this.redo}
+					again={this.again}
+				/>
+			);
+		}
+
+		if (!this.state.questionsCount) {
+			return <CustomizeQuiz onClick={this.customizeQuiz} />;
+		}
+
+		return (
 			<Lock
 				checkAnswer={this.checkAnswer}
 				question={this.state.question}
@@ -123,8 +130,10 @@ class App extends React.Component {
 				onClick={this.again}
 			/>
 		);
+	};
 
-		return <div className="app-container">{game}</div>;
+	render() {
+		return <div className="app-container">{this.renderQuizContent()}</div>;
 	}
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Value from './Value';
 import PropTypes from 'prop-types';
+import './Lock.scss';
 
 class Lock extends Component {
 	constructor(props) {
@@ -42,21 +43,21 @@ class Lock extends Component {
 
 		return (
 			<React.Fragment>
-				<h1 className={`text-with-border question ` + isLongQuestion()}>{question}</h1>
-				<div className="lock">
-					<div className="lock-combination">
-						{this.state.currentInput.map((value, i) => (
-							<Value currentValue={value} key={i} index={i} onClick={this.changeValue} />
-						))}
-					</div>
-					<div className="lock-buttons">
-						{/* <div className="next-btn" onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))} /> */}
-
-						<button className="dark-silver-btn next-btn" onClick={() => checkAnswer(userAnswer)}>
-							Next
-						</button>
-					</div>
+				<h1 className={`question ` + isLongQuestion()}>{question}</h1>
+				{/* <div className="lock"> */}
+				<div className="lock-combination">
+					{this.state.currentInput.map((value, i) => (
+						<Value currentValue={value} key={i} index={i} onClick={this.changeValue} />
+					))}
 				</div>
+				<div className="lock-buttons">
+					{/* <div className="next-btn" onClick={() => this.props.checkAnswer(this.state.currentInput.join(''))} /> */}
+
+					<button className="next-btn" onClick={() => checkAnswer(userAnswer)}>
+						Next
+					</button>
+				</div>
+				{/* </div> */}
 			</React.Fragment>
 		);
 	}

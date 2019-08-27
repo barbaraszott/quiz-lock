@@ -1,0 +1,25 @@
+@import './utilities.scss';
+
+.lock-combination_value {
+	@include flex-center;
+	width: 80px;
+	height: 80px;
+	margin: 5px;
+	background: rgb(253, 255, 255);
+	background: linear-gradient(
+		180deg,
+		rgba(253, 255, 255, 1) 0%,
+		rgba(240, 240, 240, 1) 3%,
+		rgba(241, 246, 247, 1) 19%,
+		rgba(181, 177, 174, 1) 50%
+	);
+	box-shadow: 21px 15px 21px -3px rgba(2, 2, 2, 0.71);
+	border: 1px solid #020202;
+	border-radius: 3px;
+	color: #3b3f40;
+	font-size: 3em;
+	font-weight: bold;
+	font-family: 'Roboto Slab', serif;
+	text-shadow: 2px 2px 2px #ffffff;
+	user-select: none;
+}

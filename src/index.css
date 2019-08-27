@@ -1,5 +1,8 @@
+* {
+	box-sizing: border-box;
+}
+
 html {
-	background: url(../src/wood-background.png) repeat;
 }
 
 body {
@@ -13,8 +16,4 @@ body {
 	min-height: 100vh;
 	justify-content: center;
 	align-items: center;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
