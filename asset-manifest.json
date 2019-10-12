@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/quiz-lock/static/css/main.6b3a39d6.chunk.css",
+    "main.css": "/quiz-lock/static/css/main.38f53a8f.chunk.css",
     "main.js": "/quiz-lock/static/js/main.ad10653d.chunk.js",
     "main.js.map": "/quiz-lock/static/js/main.ad10653d.chunk.js.map",
     "runtime~main.js": "/quiz-lock/static/js/runtime~main.80def91c.js",
@@ -8,9 +8,9 @@
     "static/js/2.6408f43b.chunk.js": "/quiz-lock/static/js/2.6408f43b.chunk.js",
     "static/js/2.6408f43b.chunk.js.map": "/quiz-lock/static/js/2.6408f43b.chunk.js.map",
     "index.html": "/quiz-lock/index.html",
-    "precache-manifest.642e048d5101d3422d4e0b95966981f5.js": "/quiz-lock/precache-manifest.642e048d5101d3422d4e0b95966981f5.js",
+    "precache-manifest.313c596e5eb87b16342cd089e89ece38.js": "/quiz-lock/precache-manifest.313c596e5eb87b16342cd089e89ece38.js",
     "service-worker.js": "/quiz-lock/service-worker.js",
-    "static/css/main.6b3a39d6.chunk.css.map": "/quiz-lock/static/css/main.6b3a39d6.chunk.css.map",
+    "static/css/main.38f53a8f.chunk.css.map": "/quiz-lock/static/css/main.38f53a8f.chunk.css.map",
     "static/media/App.scss": "/quiz-lock/static/media/wood-background.11eb8f32.png"
   }
 }
